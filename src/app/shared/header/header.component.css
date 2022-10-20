@@ -1,0 +1,10 @@
+.header {
+
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    left: 0;
+    right: 0;
+    position: fixed;
+    top: 8px;
+}

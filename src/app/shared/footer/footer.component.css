@@ -1,0 +1,12 @@
+.footer{
+    color:white;
+    background-color: rgb(33, 105, 141);
+    position: fixed;
+    z-index: 1100;
+    text-align: center;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-style: italic;
+
+}

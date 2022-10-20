@@ -1,0 +1,109 @@
+
+
+
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+        <h1>Employee Program App </h1>
+        <div class="d-flex">
+            <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                (click)="onAddEmployee()">Add Employee</button>
+        </div>
+    </div>
+</nav>
+<div class="body">
+    <table class="table mt-3">
+        <thead class="col-md-3">
+            <tr>
+               
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email ID</th>
+                <th>Mobile Number</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody class="col-md-2">
+            <tr *ngFor="let row of employeesData">
+               
+                <td>{{row.firstName}} </td>
+                <td>{{row.lastName}}</td>
+                <td>{{row.emailId}}</td>
+                <td>{{row.mobileNumber}}</td>
+
+                <td>
+                    <button class="btn btn-info" (click)="editEmployee(row)" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">Edit</button>
+                        
+                    <button class="btn btn-danger mx-3" (click)="deleteEmployee(row)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <app-footer></app-footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">Employee Form</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="formValue">
+                        <div class="mb-3">
+                            
+                            <label class="form-label">First Name:</label>
+                            
+                            <input formControlName="firstName" type="text" class="form-control"
+                             name="firstName" formControlName="firstName" required minlength="4" />
+                        <span *ngIf="firstName && firstName.invalid && firstName.touched"
+                               class="text-danger">Name is Required.
+                        </span>
+                        </div>
+
+                       
+
+                        <div class="mb-3">
+                            <label class="form-label">Last Name:</label>
+                            <input formControlName="emailId" type="text" class="form-control" name="lastName" 
+                            formControlName="lastName" required minlength="4"/>
+                            <span *ngIf="lastName && lastName.invalid && lastName.touched"
+                            class="text-danger">field is Required.
+                          </span>
+
+                        
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email ID:</label>
+                            <input formControlName="emailId" type="email" class="form-control" name="emailId" formControlName="emailId" />
+                            <span *ngIf="emailId && emailId.invalid && emailId.touched"
+                            class="text-danger">Email is Required.
+                         </span>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Mobile Number:</label>
+                            <input type="number" class="form-control" name="mobileNumber"
+                                formControlName="mobileNumber" />
+                                <span *ngIf="mobileNumber && mobileNumber.invalid && mobileNumber.touched"
+                            class="text-danger">Number is Required.(Maximum Length is '10')
+                         </span>
+                        </div>
+
+                        <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="btn_çancel"
+                        data-bs-dismiss="modal">Close</button>
+                    <button [disabled]="!formValue.valid" type="button" *ngIf="showBtnAdd" class="btn btn-primary"
+                        (click)="click_postEmployeeDetails()">Save
+                        Employee</button>
+                    <button type="button" *ngIf="showBtnUpdate" class="btn btn-primary"
+                        (click)="updateEmployee()">Update
+                        Employee</button>
+                </div>
+            </div>
+        </div>
+    </div>

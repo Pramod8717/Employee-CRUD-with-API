@@ -1,0 +1,66 @@
+.navbar{
+    background-color: rgb(25, 61, 25);
+}
+
+.col-md-3{
+    background-color: rgb(28, 114, 28);
+    color: white;
+    font-style: initial;
+}
+
+.modal-fade{
+    background-color: rgb(192, 225, 192);
+    color: rgb(57, 203, 57);
+    left: 10px;
+    top: 20px;
+    right: 10px;
+    bottom: 0px;
+}
+
+h1{
+    color: rgb(7, 7, 7);
+    text-align: center;
+    font-style: oblique;
+
+}
+
+.form-control.ng-touched.ng-invalid{
+border: 1px solid red;
+}
+.form-control.ng-touched.ng-valid{
+    border: 1px solid green;
+    }
+
+    input.ng-invalid{
+        border-left: 5px solid red;
+    }
+
+    input.ng-valid{
+        border-left: 5px solid green;
+    }
+
+    .body{
+       
+        background-color: rgb(215, 255, 255);
+    }
+
+    .modal-body{
+        background-color: rgb(215, 254, 249);
+    }
+
+    .modal-title{
+        color: black;
+        font-style: italic;
+        text-align: center;
+    }
+
+    .modal-content{
+        background-color: rgb(201, 201, 203);
+    }
+
+    .form-label{
+        color: rgb(250, 11, 211);
+    }
+
+
+    
