@@ -34,7 +34,7 @@ export class EmployeeDashboardComponent implements OnInit {
     this.formValue=new FormGroup({
       'firstName': new FormControl('', Validators.required),
       'lastName': new FormControl('', Validators.required),
-      'emailId': new FormControl('', [Validators.required, Validators.email]),
+      'emailId': new FormControl('', [Validators.required, Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]),
       'mobileNumber': new FormControl(
         null,
          [Validators.required, 
